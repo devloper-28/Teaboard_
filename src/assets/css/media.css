@@ -1,0 +1,4 @@
+@media(max-width:1199px){
+    header .header-2 {flex-wrap: wrap;justify-content: end; }
+    .Timer {margin-top: 5px;margin-bottom: 8px;}
+}

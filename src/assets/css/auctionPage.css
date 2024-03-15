@@ -1,0 +1,250 @@
+/*For Active Lot*/
+.active-lots-color {
+  background-color: rgb(162, 220, 206);
+}
+
+/*For Active Lots Reached Max Bid*/
+.active-lots-reached-max-bid-color {
+  background-color: rgb(162, 220, 206);
+}
+
+/*For Max Bid Reached Last 3*/
+.max-bid-reached-lots-color {
+  background-color: #ffa500;
+}
+
+/*For UnSold Lot*/
+.unsold-lots-color {
+  background-color: rgb(226, 215, 215);
+}
+
+/*For Sold Lot*/
+.sold-lots-color {
+  background-color: rgb(200, 216, 255);
+}
+
+/*For Pending Lot*/
+.pending-lots-color {
+  background-color: rgb(250, 203, 141);
+}
+
+/*For MBT Pending Lot*/
+.pending-lots-color1 {
+  background-color: rgb(250, 203, 141);
+}
+
+/*For Out Button Click*/
+.out-button-lots-color {
+  background-color: rgb(34, 139, 34);
+}
+
+/*For Buyer Win Lot*/
+.winner-buyer-lots-color {
+  background: rgb(70, 235, 45);
+}
+
+/* .Active-Lots-bx {
+  background: #a2dcce;
+}
+.Pending.Lots-bx {
+  background: #facb8d;
+}
+.Sold.Lots-bx {
+  background: #c8d8ff;
+}
+.Unsold-Lots-bx {
+  background: #e2d7d7;
+}
+.MaxBidOut-bx {
+  background: #ffa500;
+}
+.WinnerBuyer-bx {
+  background: #00ff00;
+} */
+
+.CardBox {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #d7d7d7;
+  box-shadow: 1px 1px 10px rgb(0 0 0 / 11%);
+  max-height: 150px;
+  overflow-y: auto;
+  height: 100%;
+  margin-bottom: 30px;
+}
+
+.SmallTitle {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #000866;
+  font-weight: 600;
+}
+table td button {
+  border: 0;
+  height: 30px;
+  width: auto;
+  background: #58876d !important;
+  margin-right: 5px;
+  width: 80px;
+  text-align: center;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 600;
+}
+table td button.disabled {
+  border: 0;
+  height: 30px;
+  width: auto;
+  background: #ddd !important;
+  margin-right: 5px;
+  width: 80px;
+  text-align: center;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.badge-secondary {
+  color: #fff;
+  background-color: #cccccc !important;
+}
+
+/*******MT START***************/
+
+.LiveAuction table tr td button {
+  padding: 3px 16px !important;
+  margin: 0px auto;
+  width: auto;
+  height: auto;
+  font-size: 12px;
+}
+
+.AuctionScreen .table td span {
+  padding: 0;
+}
+.liveAuctionInput {
+  padding: 0 5px !important;
+  height: 20px !important;
+
+  margin: 0px auto !important;
+  width: 100px !important;
+  border: 1px solid #6b6b6b !important;
+}
+span.badge.badge-secondary {
+  background: none !important;
+  color: #000;
+  font-size: 13px;
+}
+button.liveAuctionBtn.disabled {
+  color: #000 !important;
+  background: #d5d4d4 !important;
+}
+
+.LiveAuction table.table.dx-g-bs4-table {
+  height: calc(100vh - 189px);
+}
+.AuctionScreen .LiveAuction .table-responsive {
+  height: calc(100vh - 164px) !important;
+}
+
+.header-2 {
+  background: #efefef;
+  padding: 1px 22px;
+  font-size: 14px;
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+}
+.LiveAuction table tr td,
+.LiveAuction table tr th {
+  text-align: center !important;
+}
+
+td.position-sticky {
+  background: #efeded !important;
+}
+
+.LiveAuction table tr td,
+.LiveAuction table tr th {
+  border: 1px solid #a9a4a4 !important;
+}
+
+.LiveAuction .table .text-nowrap {
+  white-space: nowrap !important;
+  padding: 4px 4px !important;
+}
+.LiveAuction table tr td,
+.LiveAuction table tr td {
+  font-size: 13px !important;
+}
+
+.flex-direction-row.align-items-center {
+  margin: 0 auto !important;
+}
+
+.table-responsive.dx-g-bs4-table-container::-webkit-scrollbar {
+  width: 2px;
+  height: 8px !important;
+  cursor: pointer;
+}
+
+.table-responsive.dx-g-bs4-table-container ::-webkit-scrollbar-track {
+  background: #ddd !important;
+}
+.table-responsive.dx-g-bs4-table-container ::-webkit-scrollbar-thumb {
+  background: #5a5a5a !important;
+}
+.table-responsive.dx-g-bs4-table-container ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+span.status-color-bx {
+  width: 18px;
+  height: 18px;
+  display: block;
+  border: 0px solid #ddd;
+  margin: 0 7px 0 0;
+}
+.status-bx {
+  display: flex;
+  align-items: center;
+}
+.status-bx-view {
+  display: flex;
+}
+.status-color-bx {
+  margin: 0 5px 0 0;
+}
+.status-bx {
+  margin-right: 15px;
+}
+
+/* .LiveAuction table tr th:last-child,
+.LiveAuction table tr td:last-child {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0px !important;
+  border: 0px !important;
+} */
+.Auction-center-list select {
+  min-width: 100px;
+  max-width: min-content;
+}
+
+body,
+table tr td,
+table tr th {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.dx-g-bs4-table {
+  table-layout: unset !important;
+}
+
+.LiveAuction span.dx-rg-bs4-table-header-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  width: 100px;
+}

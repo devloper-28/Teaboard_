@@ -1,0 +1,9 @@
+.mui-input{
+    width: 100% !important;
+}
+.mui-input .MuiInputBase-root:hover{
+    border-color:transparent !important;
+}
+fieldset:hover{
+    border:1px solid rgba(0,0,0,.2) !important;
+}

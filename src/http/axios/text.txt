@@ -1,0 +1,667 @@
+import axios from "axios";
+import CustomToast from "../../components/Toast";
+import CryptoJS from 'crypto-js';
+
+const secretKey = '28f5667e9bc6f720d168e65bb99ade24'; // Same secret key used for encryption/decryption
+
+const axiosMain = axios.create({
+  baseURL:
+    process.env.NODE_ENV === "development"
+      ? process.env.REACT_APP_END_POINT_URL_DEV
+      : process.env.REACT_APP_END_POINT_URL_PROD,
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${atob(localStorage.getItem("argument1"))}`,
+    Userid: atob(localStorage.getItem("argument2")),
+    // Rolecode: atob(localStorage.getItem("argument6")),
+    Trackloginid:
+      localStorage.getItem("argument7") &&
+      atob(localStorage.getItem("argument7")),
+  },
+});
+axiosMain.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response) {
+      const data = error.response.data;
+      const previewStatusCode = data.statusCode;
+      const status = error.response.status;
+      const status1 = error.response;
+      console.log(status1, data, previewStatusCode, "abc");
+
+      if ("401" == (data && data.statusCode)) {
+        CustomToast.error(data && data.message);
+        localStorage.removeItem("argument1");
+        localStorage.removeItem("argument2");
+        localStorage.removeItem("argument3");
+        localStorage.removeItem("argument4");
+        localStorage.removeItem("argument5");
+        localStorage.removeItem("argument6");
+        localStorage.removeItem("argument7");
+        window.location.reload();
+        return;
+      }
+
+      switch (status) {
+        case 400:
+          console.log("network error");
+          // CustomToast.error("No Data Found", {
+          //   position: CustomToast.POSITION.TOP_RIGHT,
+          // });
+          // Show toast notification for 400 error
+          // Do not render any component directly, as it might cause errors
+          break;
+        case 404:
+          // CustomToast.error("404 Not Found", {
+          //   position: CustomToast.POSITION.TOP_RIGHT,
+          // });
+          break;
+        case 500:
+          // Show toast notification for 500 error
+          CustomToast.error("500 Internal Server Error", {
+            position: CustomToast.POSITION.TOP_RIGHT,
+          });
+          break;
+        case 200:
+          if (previewStatusCode === 204) {
+            CustomToast.error("No Data Found", {
+              position: CustomToast.POSITION.TOP_RIGHT,
+            });
+          }
+          break;
+        default:
+          console.log(status1, data, previewStatusCode, "abc");
+      }
+    }
+    return Promise.reject(error);
+  }
+);
+
+// Response Interceptor to handle common error codes
+// axiosMain.interceptors.response.use(
+//   (response) => response,
+//   (error) => {
+//     if (error.response) {
+//       const data = error.response.data;
+//       const previewStatusCode = data.statusCode;
+//       const status = error.response.status;
+//       const status1 = error.response;
+//       console.log(status1, data, previewStatusCode, "abc");
+
+//       if (status === 400) {
+//         console.log("network error");
+//         // Show toast notification for 400 error
+//         // CustomToast.error("Bad Request - Something went wrong with your request.", {
+//         //   position: CustomToast.POSITION.TOP_RIGHT,
+//         // });
+//         // Do not render any component directly, as it might cause errors
+//       }
+//       //  else if (status === 404) {
+//       //   CustomToast.error("No Data Found", {
+//       //     position: CustomToast.POSITION.TOP_RIGHT,
+//       //   });
+//       // }
+//       else if (status === 500) {
+//         // Show toast notification for 500 error
+//         CustomToast.error("500 Internal Server Error", {
+//           position: CustomToast.POSITION.TOP_RIGHT,
+//         });
+//       } else if (status === 200 && previewStatusCode === 204) {
+//         CustomToast.error("No Data Found", {
+//           position: CustomToast.POSITION.TOP_RIGHT,
+//         });
+//       }
+//     }
+//     return Promise.reject(error);
+//   }
+// );
+
+// Render the toast container for displaying toast notifications
+
+
+const encryptData = (data) => {
+  try {
+      const encryptedData = {};
+      for (const key in data) {
+          const value = data[key];
+          const encryptedValue = CryptoJS.AES.encrypt(value, secretKey).toString();
+          encryptedData[key] = encryptedValue;
+      }
+      return encryptedData;
+  } catch (error) {
+      console.error('Error encrypting data:', error);
+      return null;
+  }
+};
+
+axiosMain.interceptors.request.use((config) => {
+  if (config.data) {
+      config.data = encryptData(config.data);
+  }
+  return config;
+}, (error) => {
+  return Promise.reject(error);
+});
+
+const decryptData = (encryptedDataArray) => {
+  try {
+      return encryptedDataArray.map(encryptedData => {
+          const decryptedObject = {};
+          for (const key in encryptedData) {
+              const encryptedValue = encryptedData[key];
+              try {
+                  const decryptedValue = CryptoJS.AES.decrypt(encryptedValue, secretKey).toString(CryptoJS.enc.Utf8);
+                  decryptedObject[key] = decryptedValue;
+              } catch (error) {
+                  console.error(`Error decrypting value for key ${key}:`, error);
+                  decryptedObject[key] = null; // or handle decryption error accordingly
+              }
+          }
+          return decryptedObject;
+      });
+  } catch (error) {
+      console.error('Error decrypting data:', error);
+      return null; // or handle decryption error accordingly
+  }
+};
+
+axiosMain.interceptors.response.use(
+  (response) => {
+      if (response.data) {
+          response.data = decryptData(response.data);
+      }
+      return response;
+  },
+  (error) => {
+      console.error("Request error:", error);
+      return Promise.reject(error);
+  }
+);
+
+export default axiosMain;
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+  import axios from "axios";
+  import CustomToast from "../../components/Toast";
+  import CryptoJS from 'crypto-js';
+
+  const secretKey = '28f5667e9bc6f720d168e65bb99ade24'; // Same secret key used for encryption/decryption
+
+  const axiosMain = axios.create({
+    baseURL:
+      process.env.NODE_ENV === "development"
+        ? process.env.REACT_APP_END_POINT_URL_DEV
+        : process.env.REACT_APP_END_POINT_URL_PROD,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${atob(localStorage.getItem("argument1"))}`,
+      Userid: atob(localStorage.getItem("argument2")),
+      // Rolecode: atob(localStorage.getItem("argument6")),
+      Trackloginid:
+        localStorage.getItem("argument7") &&
+        atob(localStorage.getItem("argument7")),
+    },
+  });
+  axiosMain.interceptors.response.use(
+    (response) => response,
+    (error) => {
+      if (error.response) {
+        const data = error.response.data;
+        const previewStatusCode = data.statusCode;
+        const status = error.response.status;
+        const status1 = error.response;
+        console.log(status1, data, previewStatusCode, "abc");
+
+        if ("401" == (data && data.statusCode)) {
+          CustomToast.error(data && data.message);
+          localStorage.removeItem("argument1");
+          localStorage.removeItem("argument2");
+          localStorage.removeItem("argument3");
+          localStorage.removeItem("argument4");
+          localStorage.removeItem("argument5");
+          localStorage.removeItem("argument6");
+          localStorage.removeItem("argument7");
+          window.location.reload();
+          return;
+        }
+
+        switch (status) {
+          case 400:
+            console.log("network error");
+            // CustomToast.error("No Data Found", {
+            //   position: CustomToast.POSITION.TOP_RIGHT,
+            // });
+            // Show toast notification for 400 error
+            // Do not render any component directly, as it might cause errors
+            break;
+          case 404:
+            // CustomToast.error("404 Not Found", {
+            //   position: CustomToast.POSITION.TOP_RIGHT,
+            // });
+            break;
+          case 500:
+            // Show toast notification for 500 error
+            CustomToast.error("500 Internal Server Error", {
+              position: CustomToast.POSITION.TOP_RIGHT,
+            });
+            break;
+          case 200:
+            if (previewStatusCode === 204) {
+              CustomToast.error("No Data Found", {
+                position: CustomToast.POSITION.TOP_RIGHT,
+              });
+            }
+            break;
+          default:
+            console.log(status1, data, previewStatusCode, "abc");
+        }
+      }
+      return Promise.reject(error);
+    }
+  );
+
+  // Response Interceptor to handle common error codes
+  // axiosMain.interceptors.response.use(
+  //   (response) => response,
+  //   (error) => {
+  //     if (error.response) {
+  //       const data = error.response.data;
+  //       const previewStatusCode = data.statusCode;
+  //       const status = error.response.status;
+  //       const status1 = error.response;
+  //       console.log(status1, data, previewStatusCode, "abc");
+
+  //       if (status === 400) {
+  //         console.log("network error");
+  //         // Show toast notification for 400 error
+  //         // CustomToast.error("Bad Request - Something went wrong with your request.", {
+  //         //   position: CustomToast.POSITION.TOP_RIGHT,
+  //         // });
+  //         // Do not render any component directly, as it might cause errors
+  //       }
+  //       //  else if (status === 404) {
+  //       //   CustomToast.error("No Data Found", {
+  //       //     position: CustomToast.POSITION.TOP_RIGHT,
+  //       //   });
+  //       // }
+  //       else if (status === 500) {
+  //         // Show toast notification for 500 error
+  //         CustomToast.error("500 Internal Server Error", {
+  //           position: CustomToast.POSITION.TOP_RIGHT,
+  //         });
+  //       } else if (status === 200 && previewStatusCode === 204) {
+  //         CustomToast.error("No Data Found", {
+  //           position: CustomToast.POSITION.TOP_RIGHT,
+  //         });
+  //       }
+  //     }
+  //     return Promise.reject(error);
+  //   }
+  // );
+
+  // Render the toast container for displaying toast notifications
+
+
+  const encryptData = (data) => {
+    try {
+        const encryptedData = {};
+        for (const key in data) {
+            const value = data[key];
+            const encryptedValue = CryptoJS.AES.encrypt(value, secretKey).toString();
+            encryptedData[key] = encryptedValue;
+        }
+        return encryptedData;
+    } catch (error) {
+        console.error('Error encrypting data:', error);
+        return null;
+    }
+  };
+
+  axiosMain.interceptors.request.use((config) => {
+    if (config.data) {
+        config.data = encryptData(config.data);
+    }
+    return config;
+  }, (error) => {
+    return Promise.reject(error);
+  });
+
+  const decryptData = (encryptedDataArray) => {
+    try {
+        return encryptedDataArray.map(encryptedData => {
+            const decryptedObject = {};
+            for (const key in encryptedData) {
+                const encryptedValue = encryptedData[key];
+                try {
+                    const decryptedValue = CryptoJS.AES.decrypt(encryptedValue, secretKey).toString(CryptoJS.enc.Utf8);
+                    decryptedObject[key] = decryptedValue;
+                } catch (error) {
+                    console.error(`Error decrypting value for key ${key}:`, error);
+                    decryptedObject[key] = null; // or handle decryption error accordingly
+                }
+            }
+            return decryptedObject;
+        });
+    } catch (error) {
+        console.error('Error decrypting data:', error);
+        return null; // or handle decryption error accordingly
+    }
+  };
+
+  axiosMain.interceptors.response.use(
+    (response) => {
+        if (response.data) {
+            response.data = decryptData(response.data);
+        }
+        return response;
+    },
+    (error) => {
+        console.error("Request error:", error);
+        return Promise.reject(error);
+    }
+  );
+
+  export default axiosMain;
+///////////////////////////////////////////////////////////////
+Badal Created axiosmain file for handling object and array of obbject with proper encryption
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+import axios from "axios";
+import CryptoJS from "crypto-js";
+import CustomToast from "../../components/Toast";
+
+// Create an instance of axios
+const axiosMain = axios.create({
+  baseURL:
+    process.env.NODE_ENV === "development"
+      ? process.env.REACT_APP_END_POINT_URL_DEV
+      : process.env.REACT_APP_END_POINT_URL_PROD,
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${atob(localStorage.getItem("argument1"))}`,
+    Userid: atob(localStorage.getItem("argument2")),
+    Trackloginid:
+      localStorage.getItem("argument7") &&
+      atob(localStorage.getItem("argument7")),
+  },
+});
+
+// Secret key for encryption and decryption
+const secretKey = '28f5667e9bc6f720d168e65bb99ade24'; // Replace with your secret key
+
+// Decrypt response data
+const decryptData = (encryptedData) => {
+  try {
+    // Check if encryptedData is an array
+    if (Array.isArray(encryptedData)) {
+      // If encryptedData is an array, decrypt each object in the array
+      return encryptedData.map(encryptedObject => decryptObject(encryptedObject));
+    } else {
+      // If encryptedData is a single object, decrypt it directly
+      return decryptObject(encryptedData);
+    }
+  } catch (error) {
+    console.error('Error decrypting data:', error);
+    return null; // or handle decryption error accordingly
+  }
+};
+
+// Decrypt a single object
+const decryptObject = (encryptedObject) => {
+  const decryptedObject = {};
+  try {
+    for (const key in encryptedObject) {
+      const encryptedValue = encryptedObject[key];
+      const decryptedValue = CryptoJS.AES.decrypt(encryptedValue, secretKey).toString(CryptoJS.enc.Utf8);
+      decryptedObject[key] = decryptedValue;
+    }
+  } catch (error) {
+    console.error('Error decrypting object:', error);
+    // You can choose to handle decryption errors for individual objects here
+  }
+  return decryptedObject;
+};
+
+// Intercept response to handle decryption and error handling
+axiosMain.interceptors.response.use(
+  (response) => {
+    if (response.data) {
+      response.data = decryptData(response.data);
+    }
+    return response;
+  },
+  (error) => {
+    if (error.response) {
+      const data = error.response.data;
+      const previewStatusCode = data.statusCode;
+      const status = error.response.status;
+
+      if (status === 401 && data && data.statusCode === "401") {
+        CustomToast.error(data.message);
+        localStorage.clear();
+        window.location.reload();
+      }
+
+      switch (status) {
+        case 400:
+          console.error("Network error");
+          break;
+        case 500:
+          CustomToast.error("500 Internal Server Error", {
+            position: CustomToast.POSITION.TOP_RIGHT,
+          });
+          break;
+        case 200:
+          if (previewStatusCode === 204) {
+            CustomToast.error("No Data Found", {
+              position: CustomToast.POSITION.TOP_RIGHT,
+            });
+          }
+          break;
+        default:
+          console.error("Unknown error:", error);
+      }
+    }
+    return Promise.reject(error);
+  }
+);
+
+export default axiosMain;
+
+\\\\\\\\\\\\\\\\\\\\\\\\///////////////////////////////
+Last updated backup 
+
+
+
+import axios from "axios";
+import CustomToast from "../../components/Toast";
+import CryptoJS from 'crypto-js';
+
+const secretKey = '28f5667e9bc6f720d168e65bb99ade24'; // Same secret key used for encryption/decryption
+
+const axiosMain = axios.create({
+  baseURL:
+    process.env.NODE_ENV === "development"
+      ? process.env.REACT_APP_END_POINT_URL_DEV
+      : process.env.REACT_APP_END_POINT_URL_PROD,
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${atob(localStorage.getItem("argument1"))}`,
+    Userid: atob(localStorage.getItem("argument2")),
+    // Rolecode: atob(localStorage.getItem("argument6")),
+    Trackloginid:
+      localStorage.getItem("argument7") &&
+      atob(localStorage.getItem("argument7")),
+  },
+});
+axiosMain.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response) {
+      const data = error.response.data;
+      const previewStatusCode = data.statusCode;
+      const status = error.response.status;
+      const status1 = error.response;
+      console.log(status1, data, previewStatusCode, "abc");
+
+      if ("401" == (data && data.statusCode)) {
+        CustomToast.error(data && data.message);
+        localStorage.removeItem("argument1");
+        localStorage.removeItem("argument2");
+        localStorage.removeItem("argument3");
+        localStorage.removeItem("argument4");
+        localStorage.removeItem("argument5");
+        localStorage.removeItem("argument6");
+        localStorage.removeItem("argument7");
+        window.location.reload();
+        return;
+      }
+
+      switch (status) {
+        case 400:
+          console.log("network error");
+          // CustomToast.error("No Data Found", {
+          //   position: CustomToast.POSITION.TOP_RIGHT,
+          // });
+          // Show toast notification for 400 error
+          // Do not render any component directly, as it might cause errors
+          break;
+        case 404:
+          // CustomToast.error("404 Not Found", {
+          //   position: CustomToast.POSITION.TOP_RIGHT,
+          // });
+          break;
+        case 500:
+          // Show toast notification for 500 error
+          CustomToast.error("500 Internal Server Error", {
+            position: CustomToast.POSITION.TOP_RIGHT,
+          });
+          break;
+        case 200:
+          if (previewStatusCode === 204) {
+            CustomToast.error("No Data Found", {
+              position: CustomToast.POSITION.TOP_RIGHT,
+            });
+          }
+          break;
+        default:
+          console.log(status1, data, previewStatusCode, "abc");
+      }
+    }
+    return Promise.reject(error);
+  }
+);
+
+// Response Interceptor to handle common error codes
+// axiosMain.interceptors.response.use(
+//   (response) => response,
+//   (error) => {
+//     if (error.response) {
+//       const data = error.response.data;
+//       const previewStatusCode = data.statusCode;
+//       const status = error.response.status;
+//       const status1 = error.response;
+//       console.log(status1, data, previewStatusCode, "abc");
+
+//       if (status === 400) {
+//         console.log("network error");
+//         // Show toast notification for 400 error
+//         // CustomToast.error("Bad Request - Something went wrong with your request.", {
+//         //   position: CustomToast.POSITION.TOP_RIGHT,
+//         // });
+//         // Do not render any component directly, as it might cause errors
+//       }
+//       //  else if (status === 404) {
+//       //   CustomToast.error("No Data Found", {
+//       //     position: CustomToast.POSITION.TOP_RIGHT,
+//       //   });
+//       // }
+//       else if (status === 500) {
+//         // Show toast notification for 500 error
+//         CustomToast.error("500 Internal Server Error", {
+//           position: CustomToast.POSITION.TOP_RIGHT,
+//         });
+//       } else if (status === 200 && previewStatusCode === 204) {
+//         CustomToast.error("No Data Found", {
+//           position: CustomToast.POSITION.TOP_RIGHT,
+//         });
+//       }
+//     }
+//     return Promise.reject(error);
+//   }
+// );
+
+// Render the toast container for displaying toast notifications
+
+
+const encryptData = (data) => {
+  try {
+      const encryptedData = {};
+      for (const key in data) {
+          const value = data[key];
+          const encryptedValue = CryptoJS.AES.encrypt(value, secretKey).toString();
+          encryptedData[key] = encryptedValue;
+      }
+      return encryptedData;
+  } catch (error) {
+      console.error('Error encrypting data:', error);
+      return null;
+  }
+};
+
+axiosMain.interceptors.request.use((config) => {
+  if (config.data) {
+      config.data = encryptData(config.data);
+  }
+  return config;
+}, (error) => {
+  return Promise.reject(error);
+});
+const decryptObject = (encryptedObject) => {
+  const decryptedObject = {};
+  try {
+    for (const key in encryptedObject) {
+      const encryptedValue = encryptedObject[key];
+      const decryptedValue = CryptoJS.AES.decrypt(encryptedValue, secretKey).toString(CryptoJS.enc.Utf8);
+      decryptedObject[key] = decryptedValue;
+    }
+  } catch (error) {
+    console.error('Error decrypting object:', error);
+    // You can choose to handle decryption errors for individual objects here
+  }
+  return decryptedObject;
+};
+const decryptData = (encryptedData) => {
+  try {
+    // Check if encryptedData is an array
+    if (Array.isArray(encryptedData)) {
+      // If encryptedData is an array, decrypt each object in the array
+      return encryptedData.map(encryptedObject => decryptObject(encryptedObject));
+    } else {
+      // If encryptedData is a single object, decrypt it directly
+      return decryptObject(encryptedData);
+    }
+  } catch (error) {
+    console.error('Error decrypting data:', error);
+    return null; // or handle decryption error accordingly
+  }
+};
+
+axiosMain.interceptors.response.use(
+  (response) => {
+      if (response.data) {
+          response.data = decryptData(response.data);
+      }
+      return response;
+  },
+  (error) => {
+      console.error("Request error:", error);
+      return Promise.reject(error);
+  }
+);
+
+export default axiosMain;

@@ -1,0 +1,29 @@
+.FileUpload .FormGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.FileUpload .FormGroup input {
+  color: #444444;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+}
+.FileUpload {
+  padding: 0 0px 0px 15px;
+}
+.UploadedFile {
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 13px;
+  padding: 1px 10px;
+  border: 1px solid #a8a8a8;
+}
+.FileUpload {
+  padding: 0 0px 0px 15px;
+  margin-bottom: 0 !important;
+}

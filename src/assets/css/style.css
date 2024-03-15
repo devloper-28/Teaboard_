@@ -1,0 +1,1462 @@
+.FileUpload button,
+.SelectAll .form-check,
+.TeaboardDashboard table td,
+.TeaboardDashboard table th,
+table td,
+table th {
+  white-space: nowrap;
+}
+body,
+ul {
+  padding: 0;
+}
+table td,
+table th {
+  vertical-align: middle !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.Closed,
+.Normal {
+  font-weight: 600 !important;
+}
+.ActionBtn,
+.BtnGroup,
+.CheckboxGroup .form-check,
+.LoginTitle,
+.TabsMenu li,
+.TabsMenu ul,
+header .LogoTitle,
+header .SidebarToggle {
+  align-items: center;
+  display: flex;
+}
+.AuctioneerList li,
+.LiveAuctionMenu .Title,
+.LoginBox .LoginForm h6,
+.LoginBox h1,
+.NoData,
+.SideBar .SideBar-logo,
+.Timer,
+th.a-center {
+  text-align: center;
+}
+.GSTBox,
+.LiveAuctionMenu .TableBox,
+.SideBar,
+.TableBox,
+.modal .TableBox {
+  overflow-y: auto;
+}
+.Capital,
+.Timer,
+.UserName {
+  text-transform: uppercase;
+}
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+ul {
+  margin: 0 !important;
+  list-style: none;
+}
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #6c6c6c !important;
+  outline: 0;
+  box-shadow: 0 0 0 !important;
+}
+.table,
+table {
+  margin-bottom: 0 !important;
+  border-collapse: collapse;
+}
+.table thead,
+table thead {
+  position: sticky;
+  top: -1px;
+  z-index: 111;
+}
+table th span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff !important;
+}
+table td {
+  font-size: 12px;
+  font-weight: 500;
+  color: #111 !important;
+  padding: 4px 5px !important;
+  border: 1px solid #ddd;
+}
+label,
+table th {
+  font-weight: 600;
+}
+table th {
+  color: #fff !important;
+  padding: 1px 5px !important;
+  background: #58876d !important;
+  border: 0 bottom !important;
+  max-width: 95%;
+  width: 110px;
+  font-size: 15px;
+}
+th.position-sticky {
+  padding: 0 9px !important;
+}
+.Closed {
+  color: red !important;
+}
+.Yellow {
+  color: #fb9900 !important;
+}
+.Normal {
+  color: green !important;
+}
+.modal {
+  background: #111111a1;
+}
+label {
+  margin-bottom: 3px !important;
+  font-size: 13px;
+  color: #444;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 15px;
+  cursor: pointer;
+}
+.LogoutBtn,
+.Timer {
+  width: max-content;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #959595;
+}
+::-webkit-scrollbar-thumb {
+  background: #bbb;
+}
+header .navbar {
+  padding: 0 10px;
+}
+header .Logo {
+  height: 50px;
+}
+header h2 {
+  color: #fff;
+  margin: 0;
+  font-size: 18px;
+}
+header .nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+}
+header {
+  background: #04a44f;
+}
+header .SidebarToggle {
+  background: #005c2b;
+  width: 30px;
+  justify-content: center;
+  height: 30px;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+}
+header .header-2 {
+  font-size: 13px;
+  color: #fdfdfd;
+  display: flex;
+  align-items: center;
+}
+header .divider {
+  width: 1px;
+  background: #f9f9f9;
+  height: 18px;
+  display: inline-block;
+  margin: 0 14px;
+}
+.Timer {
+  background: #fff;
+  padding: 8px 30px;
+  margin-top: 0;
+  border-radius: 8px;
+  box-shadow: 1px 1px 16px rgb(0 0 0 / 15%);
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid #3b836b;
+  margin-bottom: 0;
+  color: #000;
+}
+.Timer i {
+  color: #3b836b;
+  font-size: 15px;
+  margin-right: 5px;
+}
+.TeaboardDashboard {
+  background: #e1e1e1;
+  padding: 10px;
+  min-height: 100vh;
+  max-height: 100%;
+}
+.TeaboardDashboard .AuctionCenter {
+  margin: 0;
+  height: 100%;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 1px 1px 7px rgb(0 0 0 / 30%);
+  border-radius: 5px;
+}
+.TeaboardDashboard .AuctionCenterName {
+  font-weight: 600;
+  font-size: 15px;
+  color: #000;
+  margin: 0;
+}
+.TeaboardDashboard .TableBox thead {
+  position: sticky;
+  top: -1px;
+  z-index: 1;
+}
+.TeaboardDashboard .TableBox {
+  min-height: 105px;
+  height: 100%;
+  max-height: 105px;
+}
+.TeaboardDashboard .AuctionStatus {
+  color: #000;
+  font-size: 13px;
+  margin: 0;
+}
+.TeaboardDashboard .TableTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 5px;
+}
+.TeaboardDashboard .TableTitle span i {
+  color: #528000;
+  font-size: 13px;
+  margin-right: 2px;
+}
+.FileUpload button,
+.TeaboardDashboard .TableTitle span,
+.UploadedFile,
+.modal .Clear {
+  font-size: 13px;
+  font-weight: 600;
+}
+.TeaboardDashboard .ClickToEnter {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #8f8f8f;
+  padding: 3px 15px;
+  border-radius: 10px;
+  margin: 0 auto auto;
+  display: block;
+  width: max-content;
+  background: #3b836b;
+  position: relative;
+  top: 19px;
+}
+.TeaboardDashboard .TableTitle .SaleNo {
+  font-size: 13px;
+  margin-right: 11px;
+  color: green;
+  font-weight: 600;
+}
+.TeaboardDashboard .TableTitle .SaleNo .No {
+  color: #111;
+}
+.AuctionScreen .LiveAuction th {
+  width: 120px;
+}
+.AuctionScreen .LiveAuction ::-webkit-scrollbar {
+  height: 5px;
+}
+.AuctionScreen .nav-link {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 10px 10px 0 0 !important;
+  margin: 0 5px 0 0 !important;
+  background: #00785038;
+  font-weight: 600;
+  font-size: 14px;
+  color: #444;
+}
+.AuctionScreen .AuctionCatelog {
+  background: #3b836b;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+.AuctionScreen .LiveAuctionMenu .nav-tabs .nav-link.active {
+  background: #3b836b;
+  color: #fff;
+}
+.AuctionScreen .table td span {
+  padding: 10px;
+  border-radius: 0;
+}
+.AuctionScreen .LiveAuction {
+  margin-bottom: 15px;
+}
+.TabsMenu {
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+}
+.TabsMenu .TableSetting {
+  background: #767676;
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0 6px;
+  display: inline-block;
+  text-align: center;
+  line-height: 2;
+  border-radius: 32px;
+  color: #fff;
+  cursor: pointer;
+}
+.TabsMenu li {
+  background: #ddd;
+  padding: 6px 18px;
+  border-radius: 10px 10px 0 0;
+  margin-right: 5px;
+  color: #444;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  justify-content: center;
+  cursor: pointer;
+}
+.TabsMenu li.active {
+  background: #38664d !important;
+  color: #fff;
+}
+.LoginBox .LoginBg {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.LoginBox .LoginBg img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.LoginBox .LoginForm {
+  margin: auto;
+  max-width: 600px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.LoginBox h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+.LoginBox .LoginForm input {
+  height: 40px;
+  border: 1px solid #b5b5b5;
+  margin: auto;
+  display: block;
+}
+.LoginBox .PasswordBox,
+.modal .modal-header {
+  position: relative;
+}
+.LoginBox .PasswordBox span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #787878;
+  font-size: 13px;
+}
+.LoginBox .LoginBtn {
+  background: #16894d;
+  color: #fff;
+  border: 0;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin: auto;
+  width: 150px;
+  font-size: 15px !important;
+}
+.LoginBox .LoginBg:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #11111173;
+}
+.LoginTitle img {
+  height: 70px;
+  margin-right: 10px;
+}
+.LoginTitle {
+  justify-content: center;
+  font-size: 33px;
+  font-weight: 700;
+  color: #16894d;
+}
+.LogoutBtn,
+.SideBar .LogoutBtn {
+  text-decoration: none;
+  color: #424242;
+  display: block;
+  cursor: pointer;
+}
+.LoginBox .LoginForm h6 {
+  font-size: 25px;
+  font-weight: 700;
+  display: block;
+  margin: 20px auto;
+  color: #444;
+}
+.LiveAuctionMenu.ShowSideBar {
+  padding-left: 290px;
+}
+.SideBar .MuiPaper-root {
+  margin-bottom: 0;
+}
+.SideBar .MuiPaper-root .MuiAccordionSummary-root {
+  border: 0;
+}
+.LogoutBtn {
+  background: #facb8d;
+  padding: 4px 28px !important;
+  border-radius: 30px;
+  margin: auto;
+  font-weight: 600;
+  font-size: 14px !important;
+  border: 0;
+}
+.LiveAuctionMenu,
+.SideBar {
+  position: fixed;
+  left: 0;
+  display: none;
+}
+.UserName {
+  border-radius: 16px;
+}
+.MainComponent.active,
+header.active {
+  width: calc(100% - 260px);
+  margin-left: auto;
+}
+.LiveAuctionMenu .table-responsive {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.LiveAuctionMenu .table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  width: 80px;
+}
+.LiveAuctionMenu {
+  bottom: 0;
+  width: 100%;
+  padding: 20px 20px 50px;
+  background: #69977d;
+  z-index: 111;
+  box-shadow: 1px 1px 10px rgb(0 0 0 / 45%);
+}
+.Shadow,
+.modal .BtnGroup button {
+  box-shadow: 1px 1px 10px rgb(0 0 0 / 15%);
+}
+.LiveAuctionMenu.active {
+  display: block;
+}
+.LiveAuctionMenu .Title {
+  background: #ddd;
+  padding: 4px 0;
+  border-radius: 9px 9px 0 0;
+  font-weight: 600;
+  position: relative;
+  top: 1px;
+}
+.AuctioneerList,
+.LiveAuctionMenu table,
+.SideBar,
+table.table {
+  background: #fff;
+}
+.LiveAuctionMenu .TableBox {
+  padding: 10px;
+  background: #fff;
+  max-height: 230px;
+  height: 100%;
+  min-height: 230px;
+}
+.AuctionScreen .LiveAuctionMenu {
+  margin-top: 30px;
+  padding-bottom: 45px;
+}
+.AuctionScreen .LiveAuction .table-responsive {
+  height: calc(100vh - 130px);
+}
+.AuctionScreen .LiveAuction .TableBox.active .table-responsive {
+  height: calc(100vh - 450px);
+}
+.AuctioneerList {
+  padding: 20px;
+  height: 100%;
+}
+.AuctioneerList li {
+  display: inline-block;
+  width: 70px;
+  background: #ddd;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 5px;
+  cursor: pointer;
+}
+.Shadow {
+  height: 230px;
+}
+span.Close {
+  position: absolute;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+  background: #58876d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  top: -14px;
+  color: #fff;
+  font-family: sans-serif;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+.SideBar.active {
+  box-shadow: 5px 4px 17px 0 #00000047;
+  display: block;
+  z-index: 1111;
+}
+.SideBar {
+  height: 100vh;
+  width: 260px;
+  top: 0;
+  box-shadow: 3px 1px 20px rgb(0 0 0/ 30%);
+  z-index: 99999;
+}
+.SideBar .SideBar-logo {
+  background: #e2d7d7;
+  cursor: pointer;
+}
+.SideBar .Logo {
+  height: 120px;
+  margin-top: 10px;
+}
+.SideBar .accordion-button:not(.collapsed) {
+  color: #525050;
+  background-color: #d7d7d7;
+  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0
+    var(--bs-accordion-border-color);
+  border-radius: 0 !important;
+}
+.SideBar [type="button"]:not(:disabled),
+.SideBar [type="reset"]:not(:disabled),
+.SideBar [type="submit"]:not(:disabled),
+.SideBar button:not(:disabled) {
+  cursor: pointer;
+  padding: 6px 23px;
+  font-size: 13px;
+}
+.SideBar h2.SideBar-title {
+  font-size: 24px;
+  padding: 8px 0;
+  margin: 0;
+}
+.MainComponent {
+  padding: 10px;
+}
+.SideBar
+  .MuiAccordionSummary-content.MuiAccordionSummary-contentGutters.css-o4b71y-MuiAccordionSummary-content {
+  padding: 0;
+  margin: 0 !important;
+}
+.SideBar .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root p {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 20px;
+  line-height: 35px;
+}
+.SideBar .css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+  margin: 0;
+}
+.SideBar .css-15v22id-MuiAccordionDetails-root {
+  padding: 7px 15px;
+}
+.SideBar .SideMenu li {
+  position: relative;
+  padding: 5px 0;
+  cursor: pointer;
+  display: block;
+  font-size: 12px;
+}
+.SideBar .LogoutBtn {
+  background: #facb8d;
+  padding: 4px 28px;
+  border-radius: 30px;
+  margin: 30px auto auto;
+  width: max-content;
+  font-weight: 600;
+  font-size: 14px;
+}
+.SideBar .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root.active,
+.modal .SubmitBtn {
+  background: #58876d;
+}
+.SideBar .SideMenu {
+  padding-left: 20px;
+}
+.SideBar .SideMenu li:before {
+  content: "";
+  position: absolute;
+  background: #58876d;
+  height: 8px;
+  width: 8px;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+.GSTBox label,
+.MuiAccordionSummary-expandIconWrapper.Mui-expanded.css-yw020d-MuiAccordionSummary-expandIconWrapper
+  svg,
+.MuiPaper-root.active .MuiTypography-root,
+.SideBar .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root.active p {
+  color: #fff;
+}
+.SideBar .css-1elwnq4-MuiPaper-root-MuiAccordion-root {
+  border-bottom: 1px solid #efefef;
+}
+.SideBar .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
+  min-height: 35px !important;
+  padding: 0 !important;
+}
+.modal .Clear,
+.modal .SubmitBtn {
+  padding: 8px 11px;
+  transition: 0.3s linear;
+}
+.SideBar .MuiSvgIcon-root {
+  position: relative;
+  top: 50%;
+  height: 35px;
+}
+.TableBox .dx-g-bs4-fixed-cell,
+.TableBox .dx-g-bs4-fixed-group-cell {
+  z-index: 2;
+}
+.modal {
+  background: #000000cc;
+  z-index: 1111 !important;
+}
+.modal-footer {
+  border-top: 0 !important;
+  padding: 0 12px 15px !important;
+}
+.modal-header {
+  padding: 5px 10px !important;
+  background: #58876d !important;
+}
+.modal-header .modal-title {
+  font-size: 18px;
+  color: #fff;
+}
+.MuiAutocomplete-popper,
+.MuiPickersPopper-root {
+  z-index: 999999999999999999999999999999 !important;
+  position: absolute;
+}
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  z-index: 1111111 !important;
+}
+.invoice-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 -10px;
+}
+.invoice-dropdown {
+  padding: 0 10px;
+  flex: 0 0 calc(100% / 5);
+}
+.invoice-modal .modal-dialog {
+  max-width: 991px;
+}
+.modal-dialog.modal-xl.modal-dialog-centered {
+  max-width: 90%;
+}
+.cust-filed input,
+.cust-filed select,
+.cust-filed textarea {
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  height: 32px;
+}
+.form-check-input {
+  position: unset !important;
+}
+.modal .SubmitBtn {
+  font-size: 13px;
+  border: none;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 18px;
+}
+.modal .SubmitBtn:hover {
+  background: #466c57;
+  color: #fff !important;
+}
+.modal .CloseModal {
+  font-size: 15px;
+  position: absolute;
+  top: -13px;
+  color: #000;
+  right: -15px;
+  background: #ddd;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.modal .Clear {
+  background: #9d9d9d;
+  border: none;
+  color: #fff;
+  margin-top: 20px;
+}
+.modal .BtnGroup button {
+  margin-right: 10px;
+  border-radius: 6px;
+  width: max-content;
+}
+.position-sticky {
+  padding: 0 !important;
+}
+.MuiPaper-root {
+  margin-bottom: 15px;
+  background: #fff;
+  border: 0;
+  box-shadow: 1px 1px 10px rgb(0 0 0 / 13%);
+}
+.MuiAccordionSummary-content {
+  margin: 0 !important;
+}
+.MuiPaper-root.active .MuiAccordionSummary-root {
+  background: #183e29;
+}
+.MuiPaper-root .MuiAccordionSummary-root {
+  max-height: 35px;
+  height: 35px;
+  min-height: 35px !important;
+  border: 1px solid #58876d5e;
+  border-radius: 6px 6px 0 0;
+}
+.MuiPaper-root.active .MuiAccordionDetails-root {
+  padding: 8px 16px 16px;
+  border: 1px solid #adadad;
+}
+.FileUpload {
+  width: 100%;
+  background: #ddd;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 25px;
+}
+.FileUpload button {
+  height: 45px;
+  background: #404040;
+  border: 0;
+  padding: 0 10px;
+  color: #fff;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 1px 1px 10px rgb(0 0 0 / 35%);
+}
+.UploadedFile {
+  border: 1px solid #ddd;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.UploadedFile .fa-times {
+  color: #fff;
+  background: #db3333;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-left: 5px;
+  right: -10px;
+  position: relative;
+}
+.DeleteModal .BtnGroup,
+ul.pagination {
+  justify-content: end;
+}
+.ActionBtn i {
+  cursor: pointer;
+}
+.CreateStateMaster .table-responsive {
+  max-height: 420px;
+}
+.FileUploadBox .card-title {
+  font-size: 15px;
+  color: #444;
+  font-weight: 600;
+}
+.Switch .custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #58876d;
+  background-color: #58876d;
+}
+.SelectAll .form-check {
+  width: max-content;
+  margin-bottom: 10px;
+  background: #5c5c5c;
+  padding: 2px 30px 2px 28px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 10px rgb(0 0 0/ 15%);
+  display: flex;
+  line-height: 27px;
+  font-family: sans-serif;
+}
+.SelectAll .form-check label {
+  margin: 0 0 0 5px !important;
+  color: #fff;
+}
+.ActionBtn span svg {
+  font-size: 16px;
+  color: #444;
+  margin: 0;
+  padding: 0;
+}
+td.p-0,
+th.p-0 {
+  visibility: hidden !important;
+  width: 0 !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+span.divider {
+  width: 1px;
+  height: 15px;
+  background: #000;
+  display: inline-block;
+  margin: 0 9px;
+}
+span.view-icon svg {
+  color: #3773ff;
+}
+span.edit-icon svg {
+  color: #dd882d;
+}
+.grey-card {
+  background: #f1f1f1 !important;
+}
+.modal .TableBox .table-responsive {
+  max-height: 300px;
+  min-height: max-content;
+}
+ul.pagination {
+  margin-top: 10px !important;
+}
+.UploadedFile {
+  width: 100%;
+  background: #fff;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.search-btn,
+table td button {
+  background: #58876d !important;
+}
+.UploadedFile p {
+  text-align: left !important;
+  margin: 0;
+  width: 100%;
+}
+.modal table th {
+  background: #7d7d7d !important;
+}
+.refresh-btn {
+  background: #7a9b89 !important;
+}
+table td.p-0,
+table th.p-0 {
+  visibility: hidden;
+  width: 0;
+  margin: 0;
+  border: 0;
+}
+.errorLabel {
+  color: #fa0000;
+  font-size: 14px;
+}
+textarea.form-control {
+  height: 28px !important;
+}
+ul.pagination li {
+  font-size: 13px;
+}
+ul.pagination .page-item.active .page-link {
+  background: #183e29 !important;
+  outline: 0;
+  border-color: #183e29 !important;
+  color: #fff !important;
+}
+ul.pagination .page-item .page-link {
+  font-size: 13px;
+  background: #e6e6e6 !important;
+  color: #000 !important;
+  border: 1px solid #bcbcbc !important;
+  font-weight: 600;
+}
+table input,
+table optgroup,
+table select,
+table textarea {
+  height: 30px;
+}
+table td button {
+  border: 0;
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+.dropdown-item.active i,
+table td button i {
+  color: #fff !important;
+}
+.FileUploadBox {
+  background: #fff;
+  box-shadow: 1px 1px 15px rgb(0 0 0 / 20%);
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+.DeleteModal h3 {
+  font-size: 20px;
+}
+.NoData {
+  font-size: 22px;
+  padding: 15px 20px;
+  font-weight: 700;
+  color: #676767;
+}
+table input[type="checkbox"] {
+  height: 17px;
+  width: 17px;
+}
+.table .table-responsive {
+  overflow-x: auto;
+}
+.DateGroup {
+  display: flex;
+  width: 100%;
+}
+.DateGroup input {
+  width: 100%;
+  margin-right: 10px;
+}
+.card-header h5 button {
+  font-size: 15px;
+  color: #fff !important;
+}
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+  background: #2b4e3b;
+  width: 100%;
+  text-align: left;
+}
+.Action i,
+.mine .Action i {
+  margin-right: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.SubmitBtn.activeDisabled {
+  background: #ddd !important;
+}
+.modal .TableBox {
+  max-height: 350px;
+  height: auto;
+}
+.SubmitBtn {
+  width: fit-content !important;
+}
+.browse-file ::-webkit-file-upload-button {
+  display: none !important;
+}
+.browse-file button.SubmitBtn {
+  margin: 0;
+  padding: 9px 36px;
+  font-size: 16px;
+}
+.browse-file {
+  width: 100%;
+  background: #ddd;
+  padding: 0;
+}
+.creat-btn {
+  float: right;
+}
+.action-btn {
+  background: 0 0 !important;
+  border: none !important;
+  color: #3d3d3d !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.FormGrup input {
+  width: 100% !important;
+}
+.browse-file input,
+.browse-file input#file-upload {
+  margin-left: 11px;
+}
+.CheckboxGroup .form-check input {
+  height: 18px;
+  width: 17px;
+}
+.CheckboxGroup .form-check label {
+  margin-bottom: 0;
+  position: relative;
+  top: 4px;
+  margin-left: 4px;
+}
+.Status.Active {
+  color: green !important;
+  font-weight: 600;
+}
+.Status.Inactive {
+  color: orange !important;
+  font-weight: 600;
+}
+.Status.Suspend {
+  color: red !important;
+  font-weight: 600;
+}
+.GSTBox {
+  background: #819e8e;
+  padding: 15px;
+  border-radius: 7px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  max-height: 250px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0;
+}
+.modal-backdrop {
+  pointer-events: none;
+}
+.MidiumTitle {
+  font-size: 22px;
+  color: #444;
+}
+.TableBox table td td {
+  border: 1px solid #ddd;
+  margin: 0;
+}
+.ContactDetail {
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-right: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.Email,
+.Mobile,
+.Phone {
+  font-weight: 700;
+  font-size: 14px;
+}
+span.brack {
+  width: 1px;
+  height: 18px;
+  background: #878787;
+  margin: 0 6px;
+}
+.export-btn button {
+  border: none;
+  background: 0 0;
+  font-size: 22px;
+}
+.pdf-btn {
+  color: #910000;
+}
+.excel-btn {
+  color: #036014;
+}
+.html5-btn {
+  color: #a17f00;
+}
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select {
+  height: auto;
+  min-height: 30px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 204px;
+  padding: 0 10px;
+  line-height: 30px;
+  font-size: 13px;
+}
+ul.MuiList-root.MuiList-padding.MuiMenu-list.css-6hp17o-MuiList-root-MuiMenu-list {
+  height: 290px;
+  width: 280px;
+}
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+  padding: 0 5px;
+}
+.Mobile,
+.Phone {
+  color: #2b8553 !important;
+}
+.Email {
+  color: #6121c1 !important;
+}
+table {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+}
+td,
+th {
+  border: 1px solid #d8d8d8 !important;
+}
+#Auction-Session table.table.table-responsive td,
+#Auction-Session table.table.table-responsive th {
+  width: auto;
+}
+.yes-or-no button {
+  color: #000;
+  border: 1px solid #ddd;
+  width: 125px !important;
+  margin-right: 12px;
+  text-align: center !important;
+  background: #ddd !important;
+}
+.yes-or-no button:hover {
+  background: unset;
+  border: unset !important;
+  color: unset !important;
+  height: 38px;
+}
+button:hover {
+  color: unset !important;
+}
+button.Excel i {
+  background: #ddd;
+  border: 0;
+  color: #58876d;
+}
+button.Excel {
+  background: #d7d7d7;
+  border: 0;
+  box-shadow: 1px 1px 18px rgb(0 0 0 / 15%);
+  border-radius: 50%;
+  margin-top: 18px;
+}
+strong.Canceled,
+strong.Closed,
+strong.Transfared {
+  padding: 0 10px;
+  border-radius: 10px;
+  font-weight: 700 !important;
+}
+p.Red {
+  color: #2521bb;
+  display: initial;
+  font-size: 13px;
+  margin-left: 5px;
+}
+.header-2 {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 5px 0;
+}
+.Remarks {
+  width: 200px;
+}
+button:disabled {
+  background-color: #adadad !important;
+  color: #fff !important;
+  cursor: not-allowed;
+}
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #25b09b;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: 1s linear infinite l3;
+}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+strong.Canceled {
+  color: #ff4c4c !important;
+  background: #ff000912;
+  box-shadow: 1px 1px #fd7a7a;
+}
+strong.Transfared {
+  color: #001d87 !important;
+  background: #0037ff26;
+  box-shadow: 1px 1px #001d87;
+}
+strong.Closed {
+  color: #e40000 !important;
+  background: #ff00091a;
+  box-shadow: 1px 1px #e40000;
+}
+strong.Pending,
+strong.Updated {
+  border-radius: 10px;
+  font-weight: 700;
+}
+strong.Pending {
+  color: #bc7200 !important;
+  background: #bc720033 !important;
+  padding: 1px 10px;
+  box-shadow: 1px 1px #bc726a;
+}
+strong.Updated {
+  color: #3f7758;
+  background: #0080001f;
+  padding: 0 10px;
+  box-shadow: 1px 1px #3f7758;
+}
+strong .totals {
+  color: #216a42;
+  font-size: 17px;
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  height: 35px !important;
+  margin: 0 !important;
+  padding: 0 12px !important;
+}
+.form-control {
+  padding: 0 8px !important;
+  margin: 0;
+  height: 35px !important;
+  font-size: 14px !important;
+}
+.invalid-feedback {
+  position: absolute;
+  color: #dc3545;
+  font-size: 11px;
+  bottom: 4px;
+  font-weight: 100;
+}
+.FomrGroup {
+  margin-bottom: 25px;
+}
+.tick-size table th {
+  word-break: break-all;
+  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
+  padding: 10px !important;
+}
+.configure_parameter .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  width: 100%;
+}
+.document_tbale table th {
+  width: 25% !important;
+}
+.css-1wc848c-MuiFormHelperText-root {
+  margin-left: 0;
+}
+.h2,
+h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #3e3e3e;
+}
+.SubmitBtn.signOut {
+  width: 100px !important;
+  margin-right: 0 !important;
+}
+.DropDownBox:focus {
+  box-shadow: 0 0 0 !important;
+}
+.DropDownBox {
+  background-color: #005c2b !important;
+  outline: 0;
+  border: 0 !important;
+}
+.DropDownBox .dropdown-menu.show {
+  display: block !important;
+  width: 100% !important;
+}
+.dropdown-menu.show > focus {
+  box-shadow: 1px 1px 10px rgb(0 0 0 / 4%) !important;
+}
+.dropdown-menu.show {
+  display: block;
+  width: 100%;
+  background: #fff;
+  color: #fff;
+  padding: 0;
+  box-shadow: 1px 1px 10px rgb(0 0 0 / 4%);
+}
+.dropdown-menu.show a {
+  color: #000;
+  font-weight: 600;
+  padding: 5px 15px;
+  transition: 0.3s linear;
+  border-bottom: 1px solid #e6e6e6;
+}
+.UserName {
+  color: #fff;
+  background: #005c2b;
+  font-size: 12px;
+  padding: 1px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.dropdown-item.active,
+.dropdown-item:active {
+  text-decoration: none !important;
+  background-color: #6f927f !important;
+  color: #fff !important;
+}
+.dropdown-toggle::after {
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  top: 3px;
+}
+.dropdown-menu.show a i {
+  font-size: 14px;
+  color: #6f927f;
+  margin-right: 7px;
+}
+select.form-control.select-form.mb-0 {
+  background: #005c2b;
+  color: #fff;
+  border: 0;
+  box-shadow: 1px 1px 10px rgb(0 0 0/ 16%);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px !important;
+  letter-spacing: 0.5px;
+}
+select.form-control.select-form.mb-0 option {
+  background: #fff;
+  color: #111;
+}
+
+.css-1nmdiq5-menu {
+  z-index: 111111111 !important;
+}
+
+.RemarksInput {
+  display: flex;
+  align-items: start;
+  width: 100%;
+  position: relative;
+}
+
+.RemarksInput sup label {
+  position: relative;
+  top: 11px;
+  right: 3px;
+  font-size: 19px;
+}
+
+.TableBox  input#remark-14 {
+  width: 110px;
+}
+
+.table thead th {
+  width: 150px;
+  max-width: 150px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.TableBox input[type="number"] {
+  width: 70px;
+}
+div#text_dark span {
+  color: #111;
+}
+
+.RemarksHead label{
+color:#fff;;
+}
+
+.ExportInput {
+  background: #5f6e66!important;
+  color: #fff;
+  font-weight: 500;
+}
+
+.sc-beySPh.gZmPOF {
+    justify-content: center;
+}
+.css-qiwgdb.MuiSelect-select {
+  height: 0px;
+}
+.css-13sljp9 { 
+  width: 100%;
+}
+/* 
+.css-qiwgdb.MuiSelect-select {
+  height: 30px;
+} */
+
+.Buyer td.Action {
+  display: flex;
+}

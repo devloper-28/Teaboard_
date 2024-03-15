@@ -1,0 +1,11 @@
+.common-table p{
+    margin-bottom: 0;
+}
+
+.dropdown_label{
+    width: 150px;
+}
+.max-width250{
+    max-width: 250px;
+    width: 100%;
+}
